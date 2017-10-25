@@ -1,0 +1,40 @@
+<ion-view view-title="Sign Up">
+    <!-- hide-nav-bar="true"-->
+    <ion-nav-buttons>
+        <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="back()">Back</a>
+    </ion-nav-buttons>
+    <ion-content scroll="false" class="center">
+        <div class="list">
+            <label class="item item-input">
+            <span class="input-label">Nome</span>
+            <input type="text" ng-model="user.name" ng-message="required" ng-minlength="3" ng-maxlength="10"/>
+            </label>
+            <label class="item item-input">
+            <span class="input-label">Cognome</span>
+            <input type="text" ng-model="user.surname" ng-minlength="3" ng-maxlength="10"/>
+            </label>
+            <label class="item item-input">
+            <span class="input-label">Citt&aacute;</span>
+            <input type="text" ng-model="user.city" ng-minlength="3" ng-maxlength="10" />
+            </label>
+            <label class="item item-input">
+            <span class="input-label">Email</span>
+            <input type="email" ng-model="user.email" />
+            </label>
+            <label class="item item-input"> 
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="user.password" ng-minlength="3" />
+            </label>
+            <label class="item item-input"> 
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="password2" ng-minlength="3" />
+            </label>
+            <span ng-if="user.password != password2"> Le password non corrispondono </span>
+            <div>
+                <button ng-disabled="!user.email || !user.password || !user.name || !user.surname || !user.city || user.password != password2"
+                    ng-click="validate(user)" class="button button-block button-assertive">Sign Up</button>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

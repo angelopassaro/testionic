@@ -1,0 +1,19 @@
+<ion-view ng view-title="Home">
+  <ion-content class="padding">
+
+     <div ng-repeat="(key,value) in myData">
+        {{key}}:{{value}}
+      </div>
+
+  </ion-content>
+  <ion-footer-bar align-title="center">
+    <div class="row row-bottom">
+      <div class="col col-50">
+        <button class="button button-block button-assertive" ui-sref="login">Sign In</button>
+      </div>
+      <div class="col col-50">
+        <button class="button button-block button-assertive" ui-sref="signup">Sign Up</button>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>
